@@ -5,18 +5,43 @@ IV. Sub-Assignment Details
 
 - how will you obfuscate strings?
 
+We will certainly use some of the strategies we have gone over throughout class
+such as putting strings on the stack in small chunks, encrypting/decrypting
+strings....
+
 
 - how will you check the user's password?
+
+We can use strcmp. What are other options?
 
 
 - how will you prevent the user from printing the location with a simple jump to 
 the print statement?
 
+??????
+
 
 - how will you display the location? (lat/long? a password that opens a map file? 
 a written description of where to go?)
+
+We are considering either a written description of where to go or providing a 
+link to an image. 
 
 
 - which obfuscation techniques would you like to incorporate, and how will you do 
 this?
 
+Bloated equivalents will most likely be implemented after our source code is
+complete. Our strategy will be to attempt to reverse our own code by going 
+through the assembly and identifying areas where we can use bloated equivalents
+to further obfuscate our code.
+
+Random predicates. 
+
+Garbage code insertion is an easy addition that we will make throughout the 
+development of our project. We will be sure to regularly analyze the executable
+with Ghidra to make sure that our garbage code is not useless. 
+
+Opaque predicates. 
+
+Control flow manipulation. 
