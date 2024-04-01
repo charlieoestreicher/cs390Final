@@ -57,4 +57,5 @@ the reversers.
 
 Control flow manipulation. We can use this to jump over or never run code that complicatedly
 hashes things in our program to waste the reversers time. We can also use the seeded random 
-number generator to jump to specific areas of the code based on the input.
+number generator to jump to specific areas of the code based on the input. This could 
+potentially purposely seg-fault depending on the implementation. 
