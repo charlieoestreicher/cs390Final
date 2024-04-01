@@ -42,6 +42,12 @@ Garbage code insertion is an easy addition that we will make throughout the
 development of our project. We will be sure to regularly analyze the executable
 with Ghidra to make sure that our garbage code is not useless. 
 
-Opaque predicates. 
+Opaque predicates will be used in conjuction with our garbage code insertion. 
+By inserting a predicate that is clear to us (the developers), but unclear to 
+the reversers, we can control the flow of the code and hopefully make our
+executable more confusing. 
 
-Control flow manipulation. 
+Control flow manipulation. Again, this strategy will probably be implemented in
+the later stages of development. I hope to use it with our garbage code. By
+adding some "garbage" functions that call each other, we can sneak in a jump
+back to the real flow of our code easily which might slide through unnoticed. 
