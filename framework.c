@@ -1,14 +1,18 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-
-int main() {
-    char* password;
+int main(int argc, char *argv[]) {
+    char *password;
     char correctPassword[] = "secret";
     char location[] = "our classroom";
 
-    printf("Enter the password: ");
-    scanf("%s", password);
+    if (argc != 2) {
+        puts("please enter a password");
+        return 1;
+    }
+
+    password = argv[1];
 
     if (strcmp(password, correctPassword) == 0) {
         printf("Password correct. Location revealed: %s\n", location);
