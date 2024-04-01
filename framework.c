@@ -8,7 +8,7 @@ int main(int argc, char *argv[]) {
     char location[] = "our classroom";
 
     if (argc != 2) {
-        puts("please enter a password");
+        puts("please enter a single string as a password");
         return 1;
     }
 
