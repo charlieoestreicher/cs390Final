@@ -1,1 +1,22 @@
-THIS IS OUR OUTLINE/IDEAS
+No code needed. This should instead be a brief outline of how your program will
+work, addressing questions like those below. It is expected that this plan will 
+evolve and change over time.
+IV. Sub-Assignment Details
+
+- how will you obfuscate strings?
+
+
+- how will you check the user's password?
+
+
+- how will you prevent the user from printing the location with a simple jump to 
+the print statement?
+
+
+- how will you display the location? (lat/long? a password that opens a map file? 
+a written description of where to go?)
+
+
+- which obfuscation techniques would you like to incorporate, and how will you do 
+this?
+
