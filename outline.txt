@@ -5,27 +5,33 @@ IV. Sub-Assignment Details
 
 - how will you obfuscate strings?
 
-We will certainly use some of the strategies we have gone over throughout class
-such as putting strings on the stack in small chunks, encrypting/decrypting
-strings....
+Some strings will be stored as small chunks so as not to be easily found by 
+programs such as 'strings'. Other strings will be encrypted with the correct
+password so that they won't be statically readable.
 
 
 - how will you check the user's password?
 
-We can use strcmp. What are other options?
+The password can be checked by checking if the inputted password correctly 
+descrypts a string by checking certain qualities of the decrypted string
+(e.g. length, characters in certain spots, hashes). But importantly this 
+decrypted string being checked will not be the final output string for the 
+final destination (so as not to give hints about the more important string).
 
 
 - how will you prevent the user from printing the location with a simple jump to 
 the print statement?
 
-??????
+The output printed will be decrypted by the input, such that even if the program jumps
+to the print statement, the output printed will be incorrect unless the program is in
+the correct state.
 
 
 - how will you display the location? (lat/long? a password that opens a map file? 
 a written description of where to go?)
 
-We are considering either a written description of where to go or providing a 
-link to an image. 
+An imgur (or other screenshot website) link that displays an image showing where 
+the object is hidden.
 
 
 - which obfuscation techniques would you like to incorporate, and how will you do 
@@ -36,12 +42,19 @@ complete. Our strategy will be to attempt to reverse our own code by going
 through the assembly and identifying areas where we can use bloated equivalents
 to further obfuscate our code.
 
-Random predicates. 
+Random predicates. We will use the input as the seed to a random number generator
+which will determine various branches the code will go down which changes the program
+state in "garbage" ways.
 
 Garbage code insertion is an easy addition that we will make throughout the 
 development of our project. We will be sure to regularly analyze the executable
 with Ghidra to make sure that our garbage code is not useless. 
 
-Opaque predicates. 
+Opaque predicates. We could manipulate the output space of the random number generator
+so that certain outputs are impossible while still keeping branch logic that accounts 
+for such numbers. These paths can then change the program in weird ways to throw off
+the reversers.
 
-Control flow manipulation. 
+Control flow manipulation. We can use this to jump over or never run code that complicatedly
+hashes things in our program to waste the reversers time. We can also use the seeded random 
+number generator to jump to specific areas of the code based on the input.
