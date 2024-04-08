@@ -5,10 +5,12 @@
 char data[28] = {0x04, 0x1B, 0x02, 0x15, 0x40, 0x03, 0x1F, 0x43, 0x06, 0x1B, 0x02, 0x46, 0x4B, 0x1E, 0x0F, 0x00, 0x1B, 0x4A, 0x52, 0x16, 0x62, 0x2F, 0x3E, 0x46, 0x2F, 0x64, 0x7B, 0x00};
 
 int garbage_one(int param_1);
-int cantaloupe(char* str, int* len);
+int cantaloupe(char* str, int* len, int* collapse);
 int durian(char*);
 long banana(char* str1, int len1, char* str2, int len2);
 int hash_check(char* str);
+int fickleberry(int val, int range, int gap);
+int gourd(char* str, int len, int rand);
 
 int main(int argc, char *argv[]) {
     int opaque_pred = 3;
@@ -17,14 +19,29 @@ int main(int argc, char *argv[]) {
         puts("please enter a single string as a password");
         return 1;
     }
+    
     char* input = argv[1];
     int len;
-    int useless = cantaloupe(input, &len);
+    int seed;
+    int useless = cantaloupe(input, &len, &seed);
+    srand(seed);
+    for(int i = 0; i < rand(); i++) {
+        rand();
+    }
+    int sw = fickleberry(rand(), data[26], data[4]);
+    int out = 9;
+    printf("sw=%d\n", sw);
+    if(sw > -30 && sw < 5) out = gourd(input, len, fickleberry(rand(), 30, 5));
+    if(sw < 56 && sw > -56) out = gourd(input, len, fickleberry(rand(), 40, 10));
+    if(sw > 200) out = gourd(input, len, fickleberry(rand(), 20, 20));
+    if(sw < -200) out = gourd(input, len, fickleberry(rand(), 30, 10));
+    if( sw > 31 && sw < 124) out = sw / 5 - 12;
+
     int d = durian(input);
     if(d != 1){
         printf("WRONG\n");
     }
-    banana(input, len, data, len*3+len-1);
+    banana(input, len, data, out*3+out-1);
     len = useless;
     puts(data);
     // if (opaque_pred > 2) {
@@ -75,10 +92,11 @@ long banana(char* str1, int len1, char* str2, int len2) {
     return (long) str1;
 }
 
-int cantaloupe(char* str, int* len) {
+int cantaloupe(char* str, int* len, int* collapse) {
     int c = 0;
     while(str[c] != 0){
         c++;
+        *collapse += (int)str[c] * 12;
     }
     *len = c;
     return c+5;
@@ -114,4 +132,26 @@ int durian(char* str){
 
 int hash_check(char* str) {
     return 0;
+}
+
+int fickleberry(int val, int range, int gap){
+    val %= range;
+    val -= range / 2;
+    if(val < 0){
+        val -= gap;
+    } else {
+        val += gap;
+    }
+    return val;
+}
+
+int gourd(char* str, int len, int rand){
+    printf("Gourd called!!!\n");
+    int c = 39;
+    for(int i = 0; i < len; i++) {
+        int d = rand * i;
+        str[i] = str[len - i - 1] ^ d;
+        c += d;
+    }
+    return c;
 }
