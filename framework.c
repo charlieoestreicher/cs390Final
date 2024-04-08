@@ -1,18 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 char data[28] = {0x04, 0x1B, 0x02, 0x15, 0x40, 0x03, 0x1F, 0x43, 0x06, 0x1B, 0x02, 0x46, 0x4B, 0x1E, 0x0F, 0x00, 0x1B, 0x4A, 0x52, 0x16, 0x62, 0x2F, 0x3E, 0x46, 0x2F, 0x64, 0x7B, 0x00};
+char forhash[30] = {0x61, 0x73, 0x64, 0x6C, 0x6B, 0x66, 0x7F, 0x7C, 0x45, 0x76, 0x00, 0x0A, 0x03, 0x6A, 0x6E, 0x62, 0x7A, 0x2E, 0x6D, 0x2F, 0x2E, 0x38, 0x33, 0x2A, 0x26, 0x33, 0x32, 0x3B, 0x41, 0x2E};
 
 int garbage_one(int param_1);
 int cantaloupe(char* str, int* len, int* collapse);
 int durian(char*);
 long banana(char* str1, int len1, char* str2, int len2);
+<<<<<<< HEAD
 int hash_check(char* str);
 int fickleberry(int val, int range, int gap);
 int gourd(char* str, int len, int rand);
+=======
+int elderberry(char* str);
+>>>>>>> c977c0d3148fcdb8338b6ce191186b5afcdbc147
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[]) { 
     int opaque_pred = 3;
 
     if (argc != 2) {
@@ -38,15 +44,18 @@ int main(int argc, char *argv[]) {
     if( sw > 31 && sw < 124) out = sw / 5 - 12;
 
     int d = durian(input);
-    if(d != 1){
+    int h = elderberry(input);
+    if(d != 1 || h == 0){
         printf("WRONG\n");
     }
+<<<<<<< HEAD
     banana(input, len, data, out*3+out-1);
+=======
+    int check = elderberry(input);
+    banana(input, len, data, len*3+len-1);
+>>>>>>> c977c0d3148fcdb8338b6ce191186b5afcdbc147
     len = useless;
     puts(data);
-    // if (opaque_pred > 2) {
-    //     garbage_one(opaque_pred);
-    // }
     
     return 0;
 }
@@ -154,4 +163,24 @@ int gourd(char* str, int len, int rand){
         c += d;
     }
     return c;
+int elderberry(char* str) {
+    int len = strlen(str);
+    char nonums[10];
+    memset(nonums, '\0', sizeof(nonums));
+    int j = 0;
+    for(int i=0; i<len; i++) {
+        if (!isdigit(str[i])) {
+            nonums[j] = (str[i]-0x10)^0x23;
+            j++;
+        }
+    }
+    if (strlen(nonums) != 4) {
+        return 0;
+    }
+    for(int i=0; i<4; i++) {
+        if(nonums[i] != forhash[i+6]) {
+            return 0;
+        }
+    }
+    return 1;
 }
