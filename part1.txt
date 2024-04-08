@@ -1,0 +1,30 @@
+John Huang, Charlie Oestreicher
+
+The Part I coding summary should include information about the design of your program, obfuscation
+techniques used, at least one strategy of how another team could successfully find the location by
+using SRE techniques, and any other information your team feels is relevant to explaining your
+project and your understanding of SRE. This write-up should also include a bulleted list of what each
+team member contributed to the development/design process
+
+DESIGN INFO:
+
+OBFUSCATION TECHNIQUES:
+
+We used an opaque predicate with the a local variable (integer) that is initialized
+to 3. We then manipulate this variable by shifting it in the assembly to make it 6 and
+compare its value...
+
+ONE STRATEGY:
+
+OTHER INFO:
+
+
+
+TEAM CONTRIBUTIONS:
+John:
+  - wrote the xor function
+  - 
+
+Charlie:
+  - implemented opaque predicates and garbage code
+  - 

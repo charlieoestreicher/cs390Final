@@ -35,13 +35,37 @@ int garbage_one(int param_1) {
     return param_1;
 }
 
-long banana(char* str1, int len1, char* str2, int len2){
-    int j = 0;
-    for(int i = 0; i < len2; i++) {
-        str2[i] = str2[i] ^ str1[j];
-        j++;
-        if(j >= len1){
-            j = 0;
+long banana(char* str1, int len1, char* str2, int len2) {
+    int sw = 1;
+    while (sw != 0) {
+        int i;
+        int j;
+        switch(sw) {
+            case(1):
+                i = 0;
+                j = 0;
+                sw = 2;
+                break;
+            case(2):
+                if(i<len2){
+                    sw = 3;
+                }
+                else{
+                    sw = 0;
+                }
+                break;
+            case(3):
+                str2[i] = str2[i] ^ str1[j];
+                j++;
+                i++;
+                sw = 4;
+                break;
+            case(4):
+                if(j>=len1) {
+                    j = 0;
+                }
+                sw = 2;
+                break;
         }
     }
     return (long) str1;
