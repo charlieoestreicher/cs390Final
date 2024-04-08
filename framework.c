@@ -10,7 +10,7 @@ int garbage_one(int param_1);
 int cantaloupe(char* str, int* len);
 int durian(char*);
 long banana(char* str1, int len1, char* str2, int len2);
-int hash_check(char* str);
+int elderberry(char* str);
 
 int main(int argc, char *argv[]) { 
     int opaque_pred = 3;
@@ -23,11 +23,11 @@ int main(int argc, char *argv[]) {
     int len;
     int useless = cantaloupe(input, &len);
     int d = durian(input);
-    int h = hash_check(input);
+    int h = elderberry(input);
     if(d != 1 || h == 0){
         printf("WRONG\n");
     }
-    int check = hash_check(input);
+    int check = elderberry(input);
     banana(input, len, data, len*3+len-1);
     len = useless;
     puts(data);
@@ -113,7 +113,7 @@ int durian(char* str){
     return 1;
 }
 
-int hash_check(char* str) {
+int elderberry(char* str) {
     int len = strlen(str);
     char nonums[10];
     memset(nonums, '\0', sizeof(nonums));
