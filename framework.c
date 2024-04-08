@@ -20,6 +20,9 @@ int main(int argc, char *argv[]) {
     int len;
     int useless = cantaloupe(input, &len);
     int d = durian(input);
+    if(d != 1){
+        printf("WRONG\n");
+    }
     banana(input, len, data, len*3+len-1);
     len = useless;
     puts(data);
@@ -83,11 +86,27 @@ int cantaloupe(char* str, int* len) {
 int durian(char* str){
     int c = 0;
     int t = 1;
+    int k = 0;
+    int n = 0;
+    int prev = 4;
     while(str[c++] != 0){
         char v = str[c] - 0x30;
         if(str[c] >= 0x30 && str[c] < 0x40){
+            if(c < 3 || c > 7) return -1;
             t *= (int)v + 1;
+            k += v;
+            n++;
+            if(v % 3 != 0){
+                return -1;
+            }
+            if(n == 2 && v / prev != 3){
+                return -1;
+            }
+            prev = v;
         }
     }
-    return t;
+    if(n != 3 && t != 40 && (t-k) !=28){
+        return -1;
+    }
+    return 1;
 }
