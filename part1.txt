@@ -27,4 +27,4 @@ John:
 
 Charlie:
   - implemented opaque predicates and garbage code
-  - 
+  - flattened the banana function
