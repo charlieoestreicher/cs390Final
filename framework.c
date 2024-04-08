@@ -7,6 +7,7 @@ char data[28] = {0x04, 0x1B, 0x02, 0x15, 0x40, 0x03, 0x1F, 0x43, 0x06, 0x1B, 0x0
 int garbage_one(int param_1);
 int cantaloupe(char* str, int* len);
 long banana(char* str1, int len1, char* str2, int len2);
+int hash_check(char* str);
 
 int main(int argc, char *argv[]) {
     int opaque_pred = 3;
@@ -83,4 +84,8 @@ int cantaloupe(char* str, int* len) {
     }
     *len = c;
     return c+5;
+}
+
+int hash_check(char* str) {
+    return 0;
 }
