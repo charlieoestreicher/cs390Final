@@ -6,6 +6,7 @@ char data[28] = {0x04, 0x1B, 0x02, 0x15, 0x40, 0x03, 0x1F, 0x43, 0x06, 0x1B, 0x0
 
 int garbage_one(int param_1);
 int cantaloupe(char* str, int* len);
+int durian(char*);
 long banana(char* str1, int len1, char* str2, int len2);
 
 int main(int argc, char *argv[]) {
@@ -17,19 +18,13 @@ int main(int argc, char *argv[]) {
     }
     char* input = argv[1];
     int len;
-    cantaloupe(input, &len);
+    int useless = cantaloupe(input, &len);
+    int d = durian(input);
     banana(input, len, data, len*3+len-1);
+    len = useless;
     puts(data);
     // if (opaque_pred > 2) {
     //     garbage_one(opaque_pred);
-    // }
-
-    // password = argv[1];
-
-    // if (strcmp(password, correctPassword) == 0) {
-    //     printf("Password correct. Location revealed: %s\n", location);
-    // } else {
-    //     printf("Incorrect password. Access denied.\n");
     // }
     
     return 0;
@@ -59,4 +54,16 @@ int cantaloupe(char* str, int* len) {
     }
     *len = c;
     return c+5;
+}
+
+int durian(char* str){
+    int c = 0;
+    int t = 1;
+    while(str[c++] != 0){
+        char v = str[c] - 0x30;
+        if(str[c] >= 0x30 && str[c] < 0x40){
+            t *= (int)v + 1;
+        }
+    }
+    return t;
 }
