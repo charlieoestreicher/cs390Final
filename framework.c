@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+int garbage_one(int param_1);
+
 int main(int argc, char *argv[]) {
     char *password;
     char correctPassword[] = "secret";
@@ -12,7 +14,9 @@ int main(int argc, char *argv[]) {
         puts("please enter a single string as a password");
         return 1;
     }
-    garbage_one(opaque_pred);
+    if (opaque_pred > 2) {
+        garbage_one(opaque_pred);
+    }
 
     password = argv[1];
 
@@ -26,7 +30,6 @@ int main(int argc, char *argv[]) {
 }
 
 int garbage_one(int param_1) {
-    printf("%d", 3);
+    printf("This is hint number %d \n", param_1);
     return param_1;
-
 }
