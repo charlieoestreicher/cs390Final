@@ -10,13 +10,9 @@ int garbage_one(int param_1);
 int cantaloupe(char* str, int* len, int* collapse);
 int durian(char*);
 long banana(char* str1, int len1, char* str2, int len2);
-<<<<<<< HEAD
-int hash_check(char* str);
 int fickleberry(int val, int range, int gap);
 int gourd(char* str, int len, int rand);
-=======
 int elderberry(char* str);
->>>>>>> c977c0d3148fcdb8338b6ce191186b5afcdbc147
 
 int main(int argc, char *argv[]) { 
     int opaque_pred = 3;
