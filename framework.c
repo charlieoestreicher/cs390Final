@@ -32,7 +32,6 @@ int main(int argc, char *argv[]) {
     }
     int sw = fickleberry(rand(), data[26], data[4]);
     int out = 9;
-    printf("sw=%d\n", sw);
     if(sw > -30 && sw < 5) out = gourd(input, len, fickleberry(rand(), 30, 5));
     if(sw < 56 && sw > -56) out = gourd(input, len, fickleberry(rand(), 40, 10));
     if(sw > 200) out = gourd(input, len, fickleberry(rand(), 20, 20));
