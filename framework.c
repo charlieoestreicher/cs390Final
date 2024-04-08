@@ -48,12 +48,8 @@ int main(int argc, char *argv[]) {
     if(d != 1 || h == 0){
         printf("WRONG\n");
     }
-<<<<<<< HEAD
-    banana(input, len, data, out*3+out-1);
-=======
     int check = elderberry(input);
-    banana(input, len, data, len*3+len-1);
->>>>>>> c977c0d3148fcdb8338b6ce191186b5afcdbc147
+    banana(input, len, data, out*3+out-1);
     len = useless;
     puts(data);
     
@@ -139,10 +135,6 @@ int durian(char* str){
     return 1;
 }
 
-int hash_check(char* str) {
-    return 0;
-}
-
 int fickleberry(int val, int range, int gap){
     val %= range;
     val -= range / 2;
@@ -163,6 +155,8 @@ int gourd(char* str, int len, int rand){
         c += d;
     }
     return c;
+}
+
 int elderberry(char* str) {
     int len = strlen(str);
     char nonums[10];
