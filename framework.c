@@ -24,19 +24,16 @@ int main(int argc, char *argv[]) {
     
     char* input = argv[1];
     int len;
-    int seed;
+    int seed = 0;
     int useless = cantaloupe(input, &len, &seed);
     srand(seed);
-    for(int i = 0; i < rand(); i++) {
-        rand();
-    }
     int sw = fickleberry(rand(), data[26], data[4]);
     int out = 9;
     if(sw > -30 && sw < 5) out = gourd(input, len, fickleberry(rand(), 30, 5));
     if(sw < 56 && sw > -56) out = gourd(input, len, fickleberry(rand(), 40, 10));
     if(sw > 200) out = gourd(input, len, fickleberry(rand(), 20, 20));
     if(sw < -200) out = gourd(input, len, fickleberry(rand(), 30, 10));
-    if( sw > 31 && sw < 124) out = sw / 5 - 12;
+    if( sw < -31 && sw > -124) out = 7;
 
     int d = durian(input);
     int h = elderberry(input);
@@ -94,10 +91,12 @@ long banana(char* str1, int len1, char* str2, int len2) {
 
 int cantaloupe(char* str, int* len, int* collapse) {
     int c = 0;
+    int d = 0;
     while(str[c] != 0){
+        d += (int)str[c] * 12;
         c++;
-        *collapse += (int)str[c] * 12;
     }
+    *collapse = d;
     *len = c;
     return c+5;
 }
