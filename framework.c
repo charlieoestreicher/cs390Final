@@ -38,7 +38,8 @@ int main(int argc, char *argv[]) {
     int d = durian(input);
     int h = elderberry(input);
     if(d != 1 || h == 0){
-        printf("WRONG\n");
+        printf("Incorrect password!\n");
+        return 0;
     }
     banana(input, len, data, out*3+out-1);
     len = useless;
