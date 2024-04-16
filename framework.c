@@ -6,7 +6,6 @@
 char data[28] = {0x04, 0x1B, 0x02, 0x15, 0x40, 0x03, 0x1F, 0x43, 0x06, 0x1B, 0x02, 0x46, 0x4B, 0x1E, 0x0F, 0x00, 0x1B, 0x4A, 0x52, 0x16, 0x62, 0x2F, 0x3E, 0x46, 0x2F, 0x64, 0x7B, 0x00};
 char forhash[30] = {0x61, 0x73, 0x64, 0x6C, 0x6B, 0x66, 0x7F, 0x7C, 0x45, 0x76, 0x00, 0x0A, 0x03, 0x6A, 0x6E, 0x62, 0x7A, 0x2E, 0x6D, 0x2F, 0x2E, 0x38, 0x33, 0x2A, 0x26, 0x33, 0x32, 0x3B, 0x41, 0x2E};
 
-int garbage_one(int param_1);
 int cantaloupe(char* str, int* len, int* collapse);
 int durian(char*);
 long banana(char* str1, int len1, char* str2, int len2);
@@ -15,7 +14,6 @@ int gourd(char* str, int len, int rand);
 int elderberry(char* str);
 
 int main(int argc, char *argv[]) { 
-    int opaque_pred = 3;
 
     if (argc != 2) {
         puts("please enter a single string as a password");
@@ -28,6 +26,7 @@ int main(int argc, char *argv[]) {
     int useless = cantaloupe(input, &len, &seed);
     srand(seed);
     int sw = fickleberry(rand(), data[26], data[4]);
+    printf("sw = %d \n", sw);
     int out = 9;
     if(sw > -30 && sw < 5) out = gourd(input, len, fickleberry(rand(), 30, 5));
     if(sw < 56 && sw > -56) out = gourd(input, len, fickleberry(rand(), 40, 10));
@@ -46,11 +45,6 @@ int main(int argc, char *argv[]) {
     puts(data);
     
     return 0;
-}
-
-int garbage_one(int param_1) {
-    printf("This is hint number %d \n", param_1);
-    return param_1;
 }
 
 long banana(char* str1, int len1, char* str2, int len2) {
