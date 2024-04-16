@@ -26,14 +26,11 @@ int main(int argc, char *argv[]) {
     int useless = cantaloupe(input, &len, &seed);
     srand(seed);
     int sw = fickleberry(rand(), data[26], data[4]);
-    printf("sw = %d \n", sw);
-    int out = 9;
+    int out = 7;
     if(sw > -30 && sw < 5) out = gourd(input, len, fickleberry(rand(), 30, 5));
     if(sw < 56 && sw > -56) out = gourd(input, len, fickleberry(rand(), 40, 10));
     if(sw > 200) out = gourd(input, len, fickleberry(rand(), 20, 20));
     if(sw < -200) out = gourd(input, len, fickleberry(rand(), 30, 10));
-    if( sw < -31 && sw > -124) out = 7;
-    
 
     int d = durian(input);
     int h = elderberry(input);
@@ -141,7 +138,7 @@ int fickleberry(int val, int range, int gap){
 }
 
 int gourd(char* str, int len, int rand){
-    printf("Gourd called!!!\n");
+    printf("Gourd called!!! Congrats!! JK\n");
     int c = 39;
     for(int i = 0; i < len; i++) {
         int d = rand * i;
