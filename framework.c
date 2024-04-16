@@ -33,13 +33,13 @@ int main(int argc, char *argv[]) {
     if(sw > 200) out = gourd(input, len, fickleberry(rand(), 20, 20));
     if(sw < -200) out = gourd(input, len, fickleberry(rand(), 30, 10));
     if( sw < -31 && sw > -124) out = 7;
+    
 
     int d = durian(input);
     int h = elderberry(input);
     if(d != 1 || h == 0){
         printf("WRONG\n");
     }
-    int check = elderberry(input);
     banana(input, len, data, out*3+out-1);
     len = useless;
     puts(data);
@@ -48,6 +48,7 @@ int main(int argc, char *argv[]) {
 }
 
 long banana(char* str1, int len1, char* str2, int len2) {
+    // xors input string with data to get the link
     int sw = 1;
     while (sw != 0) {
         int i;
@@ -84,6 +85,8 @@ long banana(char* str1, int len1, char* str2, int len2) {
 }
 
 int cantaloupe(char* str, int* len, int* collapse) {
+    // returns the length of str + 5
+    // changes len to the length of str
     int c = 0;
     int d = 0;
     while(str[c] != 0){
@@ -96,6 +99,7 @@ int cantaloupe(char* str, int* len, int* collapse) {
 }
 
 int durian(char* str){
+    // ensures the last 3 digits are '390'
     int c = 0;
     int t = 1;
     int k = 0;
@@ -124,6 +128,7 @@ int durian(char* str){
 }
 
 int fickleberry(int val, int range, int gap){
+    // returns a seemingly random val?
     val %= range;
     val -= range / 2;
     if(val < 0){
@@ -146,6 +151,8 @@ int gourd(char* str, int len, int rand){
 }
 
 int elderberry(char* str) {
+    //checks that there are 4 non-numeric characters
+    //compares decrypted characters with those in the hash
     int len = strlen(str);
     char nonums[10];
     memset(nonums, '\0', sizeof(nonums));
