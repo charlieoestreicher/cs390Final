@@ -136,10 +136,12 @@ main:
 	mov	rax, QWORD PTR -32[rbp]
 	mov	rdi, rax
 	call	durian
-	mov	DWORD PTR -44[rbp], eax
+	mov	ecx, DWORD PTR -52[rbp]
 	mov	rax, QWORD PTR -32[rbp]
+	mov	esi, ecx
 	mov	rdi, rax
-	call	elderberry
+	call	gourd
+	mov	DWORD PTR -44[rbp], ebx
 	mov	DWORD PTR -48[rbp], eax
 	cmp	DWORD PTR -44[rbp], 1
 	jne	.L8
@@ -396,6 +398,8 @@ durian:
 	mov	eax, 1
 .L30:
 	pop	rbp
+	call elderberry
+	add	DWORD PTR [rsp], 17
 	ret
 	.size	durian, .-durian
 	.globl	fickleberry
@@ -482,6 +486,7 @@ gourd:
 	.globl	elderberry
 	.type	elderberry, @function
 elderberry:
+	push rax
 	push	rbp
 	mov	rbp, rsp
 	sub	rsp, 48
@@ -563,6 +568,8 @@ elderberry:
 	mov	eax, 1
 .L52:
 	leave
+	mov rbx, rax
+	pop rax
 	ret
 	.size	elderberry, .-elderberry
 	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
