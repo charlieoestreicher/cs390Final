@@ -19,7 +19,7 @@ forhash:
 	.section	.rodata
 	.align 8
 .LC0:
-	.string	"please enter a single string as a password"
+	.string	"please enter a single string as a password. The correct output is a valid link."
 .LC1:
 	.string	"Incorrect password!"
 	.text
