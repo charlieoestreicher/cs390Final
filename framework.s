@@ -141,8 +141,8 @@ main:
 	mov	esi, ecx
 	mov	rdi, rax
 	call	gourd
-	mov	DWORD PTR -44[rbp], ebx
-	mov	DWORD PTR -48[rbp], eax
+	mov	DWORD PTR -44[rbp], eax
+	mov	DWORD PTR -48[rbp], ebx
 	cmp	DWORD PTR -44[rbp], 1
 	jne	.L8
 	cmp	DWORD PTR -48[rbp], 0
